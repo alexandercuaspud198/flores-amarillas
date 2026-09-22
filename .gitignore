@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+*.log
+# Archivos originales que ya no utiliza la dedicatoria.
+sound/
+anim.js
