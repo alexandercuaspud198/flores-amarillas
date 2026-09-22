@@ -11,6 +11,7 @@ const types = {
   ".js": "text/javascript; charset=utf-8",
   ".png": "image/png",
   ".mp3": "audio/mpeg",
+  ".m4a": "audio/mp4",
 };
 
 const server = http.createServer((request, response) => {

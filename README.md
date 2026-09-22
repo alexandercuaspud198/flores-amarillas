@@ -4,10 +4,15 @@ Para abrir el proyecto en Windows, haz doble clic en `iniciar.cmd` (requiere Nod
 Mantén abierta la ventana del servidor. También puedes ejecutar `node server.cjs`
 y visitar http://127.0.0.1:5173.
 
-No abras los HTML con doble clic: YouTube necesita una página servida por HTTP/HTTPS
-para identificar el sitio y evitar el error 153. En una web publicada con HTTPS
-no hace falta el iniciador. La música requiere conexión y el navegador puede pedir
-que pulses «Reproducir canción» para permitir el sonido.
+La página usa una portada de carta y un ramo separado de la dedicatoria.
+GitHub Pages publica la rama `main` desde la raíz; no necesita compilar el proyecto.
+
+La música está preparada para un archivo MP3/M4A con un pequeño control de reproducción,
+sin reproductor de YouTube. Añade el archivo a `sound/` y configura su ruta en el
+atributo `src` de `#background-music` en `flower.html`. Como `sound/` está ignorada,
+añade una excepción para ese archivo en `.gitignore` antes de publicarlo.
+Mientras no se configure un archivo, solo se muestra un enlace a «Te Regalo».
+El navegador puede pedir que pulses el botón para permitir el sonido.
 
 ## Proyecto original
 

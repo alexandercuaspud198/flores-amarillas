@@ -6,33 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/letter.css" />
     <link rel="icon" href="img/flowers.png" type="image/x-icon" />
     <title>Para ti, Lizeth 💛</title>
   </head>
-  <body class="container">
-    <h1 class="titulo"><span class="dedication-name">Para ti, Lizeth 💛</span>
-      Lizeth, gracias por llegar a mi vida. Quiero compartir contigo mis días,
-      mis sueños y todo lo bonito que nos espera. Estas flores son un pequeño
-      recordatorio de cuánto te amo.</h1>
-    <aside class="music" aria-label="Nuestra canción">
-      <p>Te Regalo · Rels B y J Abecia</p>
-      <iframe
-        id="music-player"
-        width="320"
-        height="200"
-        data-src="https://www.youtube.com/embed/YNqug5jirKc?autoplay=1&amp;loop=1&amp;playlist=YNqug5jirKc&amp;playsinline=1&amp;rel=0"
-        title="Te Regalo — Rels B y J Abecia. Reproductor de música"
-        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-      <p id="music-status" role="status">Cargando nuestra canción…</p>
-      <button id="music-play" type="button" hidden>Reproducir canción</button>
-      <p>
-        <a href="https://www.youtube.com/watch?v=YNqug5jirKc" target="_blank" rel="noopener noreferrer">Abrir en YouTube</a>
-      </p>
-    </aside>
-  
+  <body class="gift-page container">
+    <main class="gift-layout">
+      <section class="letter" aria-labelledby="dedication-title">
+        <a class="back-link" href="index.html">← Volver al comienzo</a>
+        <div class="letter-content">
+          <h1 id="dedication-title">Para ti,<br><em>Lizeth.</em></h1>
+          <div class="dedication">
+            <p>Lizeth, gracias por llegar a mi vida.</p>
+            <p>Quiero compartir contigo mis días, mis sueños y todo lo bonito que nos espera.</p>
+            <p>Estas flores son un pequeño recordatorio de <strong>cuánto te amo.</strong></p>
+          </div>
+          <p class="letter-signature">Con todo mi amor <span aria-hidden="true">♡</span></p>
+          <div class="song-control">
+            <audio id="background-music" preload="metadata" loop src="sound/te-regalo.mp3"></audio>
+            <button id="music-toggle" class="sound-button" type="button" aria-label="Reproducir nuestra canción" hidden>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13M9 8l12-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="18" cy="16" rx="3" ry="2"/></svg>
+              <span id="music-label">Nuestra canción</span>
+            </button>
+            <a id="song-link" class="song-link" href="https://www.youtube.com/watch?v=YNqug5jirKc" target="_blank" rel="noopener noreferrer">Nuestra canción <span aria-hidden="true">↗</span></a>
+            <p id="music-status" class="music-status" role="status"></p>
+          </div>
+        </div>
+      </section>
+      <section class="bouquet-stage" aria-label="Un ramo de flores amarillas que florece para ti">
+        <div class="bouquet-art" aria-hidden="true">
     <div class="night"></div>
     <div class="flowers">
       <div class="flower flower--1">
@@ -343,6 +345,9 @@
         </div>
       </div>
     </div>
+        </div>
+      </section>
+    </main>
     <script src="main.js"></script>
     <script src="music.js"></script>
   </body>

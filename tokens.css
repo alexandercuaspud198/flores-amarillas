@@ -1,0 +1,27 @@
+/* Hallmark · Letter · Garden adapted to the existing yellow flowers.
+ * Pre-emit critique: Philosophy 5, Hierarchy 5, Execution 4, Specificity 5, Restraint 5, Variety 4. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Geist:wght@400;500&display=swap');
+
+:root {
+  --color-paper: oklch(97% 0.015 85);
+  --color-paper-2: oklch(93% 0.025 85);
+  --color-rule: oklch(83% 0.025 85);
+  --color-ink: oklch(27% 0.035 155);
+  --color-muted: oklch(47% 0.028 155);
+  --color-accent: oklch(40% 0.055 155);
+  --color-accent-ink: var(--color-paper);
+  --color-gold: oklch(78% 0.14 88);
+  --color-focus: oklch(47% 0.12 155);
+  --color-night: oklch(16% 0.023 155);
+  --color-night-glow: oklch(24% 0.035 155);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Geist', Arial, sans-serif;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 180ms;
+}

@@ -2,6 +2,6 @@ node_modules/
 .env
 .env.*
 *.log
+.hallmark/
 # Archivos originales que ya no utiliza la dedicatoria.
-sound/
 anim.js

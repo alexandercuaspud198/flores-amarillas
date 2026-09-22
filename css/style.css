@@ -1,97 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-*{
-    font-family: 'Poppins',cursive;
+/* Hallmark · macrostructure: Invitation · tone: intimate · anchor hue: warm gold
+ * Pre-emit critique: Philosophy 5 · Hierarchy 5 · Execution 4 · Specificity 5 · Restraint 5 · Variety 4 */
+@import url("../tokens.css");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
-body{
-    color: azure;
-    width: 100%;
-    height: 82vh;
-    display: flex;
-    flex-direction: column;
+
+html,
+body {
+    margin: 0;
+    overflow-x: clip;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: var(--space-lg) var(--space-sm);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+.invitation {
+    width: min(100%, 42rem);
+    min-width: 0;
+    padding: clamp(32px, 7vw, 64px) var(--space-sm);
+    text-align: center;
+}
+
+.envelope {
+    position: relative;
+    width: 112px;
+    height: 76px;
+    margin: 0 auto var(--space-xl);
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    background: var(--color-paper-2);
+    transform: rotate(-6deg);
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: -1px -1px auto;
+    height: 45px;
+    background: var(--color-rule);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope-flap::after {
+    content: "";
+    position: absolute;
+    inset: 0 1px 1px;
+    background: var(--color-paper);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope-seal {
+    position: absolute;
+    top: 29px;
+    left: calc(50% - 14px);
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-gold);
+    color: var(--color-ink);
+    font-size: 12px;
+    line-height: 1;
+}
+
+h1 {
+    min-width: 0;
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 14vw, 7.5rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.invitation-message {
+    margin: var(--space-md) 0 var(--space-xl);
+    color: var(--color-muted);
+    font-size: clamp(1rem, 2.8vw, 1.25rem);
+    line-height: 1.6;
+    text-wrap: balance;
+}
+
+.open-invitation {
+    display: inline-flex;
+    min-height: 52px;
+    max-width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    /* padding-top: -30; */
-}
-
-.botones{
-    padding: 9px;
-    border-radius: 80px;
-    background-color: transparent;
-    border: none;
-}
-
-.botones a{
-    background-color: #0a2be9;
-    padding: 9px;
-    border-radius: 80px;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
-    -ms-border-radius: 80px;
-    -o-border-radius: 80px;
-
-}
-
-.botones a:focus{
-    background-color: rgb(50, 194, 194);
-}
-
-.greetings{
-    font-size: 7rem;
-    font-weight: 900;
-}
-.greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
-}
-@keyframes glow{
-    0%, 100%{
-        color: #fff;
-        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
-    }
-    10%, 90%{
-        color: #111;
-        text-shadow: none;
-    }
-}
-.greetings > span:nth-child(2){
-    animation-delay: .2s ;
-}
-.greetings > span:nth-child(3){
-    animation-delay: .4s ;
-}
-.greetings > span:nth-child(4){
-    animation-delay: .6s;
-}
-.greetings > span:nth-child(5){
-    animation-delay: .8s;
-}
-.greetings > span:nth-child(6){
-    animation-delay: 1s;
-}
-
-.description{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.button a{
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-ink);
+    border-radius: 4px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-size: 0.9375rem;
+    line-height: 1.25;
     text-decoration: none;
-    font-size: 1rem;
-    color: #111;
+    white-space: nowrap;
+    transition: transform var(--dur-short) var(--ease-out);
 }
 
-@media screen and (max-width:574px){
-    .greetings{
-        display: block;
-        font-size: 4rem;
-        font-weight: 800;
-        text-align: center;
+.open-invitation:hover {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    border-color: var(--color-accent);
+}
+
+.open-invitation:active {
+    transform: translateY(1px);
+}
+
+.open-invitation:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.open-invitation span {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.invitation-signature {
+    margin: var(--space-xl) 0 0;
+    color: var(--color-muted);
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+@media (max-width: 374px) {
+    .invitation {
+        padding-inline: 0;
     }
-    .description{
-        font-size: 2rem;
+
+    .envelope {
+        margin-bottom: var(--space-lg);
     }
-    
-    .button a{
-        font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .open-invitation {
+        transition: none;
+    }
+
+    .open-invitation:hover,
+    .open-invitation:active {
+        transform: none;
     }
 }
